@@ -184,7 +184,7 @@ python train_index_prediction.py -opt ./configs/index_pred_net.yml
 
 Please visit our [Project Page](https://yumingj.github.io/projects/Text2Human.html#results) to view more results.</br>
 You can select the attribtues to customize the desired human images.
-[<img src="./assets/results.png" width="80%" height="80%">
+[<img src="./assets/results.png" width="90%">
 ](https://yumingj.github.io/projects/Text2Human.html#results)
 
 ## TODO List
