@@ -25,7 +25,7 @@ From [MMLab@NTU](https://www.mmlab-ntu.com/index.html) affliated with S-Lab, Nan
 <tr>
 </table>
 
-[**[Project Page]**](https://yumingj.github.io/projects/Text2Human.html) | [**[Paper (Coming soon)]**](xxx) | [**[Demo Video ]**](https://youtu.be/yKh4VORA_E0)
+[**[Project Page]**](https://yumingj.github.io/projects/Text2Human.html) | [**[Paper (Coming soon)]**](xxx) | [**[Dataset]**](https://github.com/yumingj/DeepFashion-MultiModal) | [**[Demo Video]**](https://youtu.be/yKh4VORA_E0)
 
 
 ## Updates
