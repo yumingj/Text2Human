@@ -172,7 +172,7 @@ TBD
 ## TODO List
 
 - [ ] Release 1024x512 version of Text2Human.
-- [ ] Train the Text2Human using [SHHQ dataset](https://arxiv.org/pdf/2204.11823.pdf).
+- [ ] Train the Text2Human using [SHHQ dataset]([https://arxiv.org/pdf/2204.11823.pdf](https://stylegan-human.github.io/)).
 
 ## Citation
 
