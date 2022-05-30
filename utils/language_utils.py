@@ -32,8 +32,8 @@ upper_length_attr = {
     'with long sleeves': 3
 }
 lower_length_text = [
-    'three-point', 'medium', 'short', 'covering knee', 'cropped', 'capri',
-    'three-quarter', 'long', 'slack', 'of long length'
+    'three-point', 'medium', 'short', 'covering knee', 'cropped',
+    'capri-pants', 'three-quarter', 'long', 'slack', 'of long length'
 ]
 lower_length_attr = {
     'three-point': 0,
@@ -133,7 +133,6 @@ def generate_shape_attributes(user_shape_texts):
             predefined_embeddings = model.encode(lower_length_text)
             similarities = util.dot_score(user_embeddings,
                                           predefined_embeddings)
-            print(similarities)
             arg_idx = torch.argmax(similarities).item()
             attr[1] = lower_length_attr[lower_length_text[arg_idx]]
             changed[1] = 1
@@ -291,7 +290,6 @@ def generate_texture_attributes(user_text):
 
     attr = []
     for text in parsed_texts:
-        print(text)
         if ('pure color' in text) or ('solid color' in text):
             attr.append(4)
         elif ('spline' in text) or ('stripe' in text):
@@ -304,8 +302,6 @@ def generate_texture_attributes(user_text):
             attr.append(0)
         else:
             attr.append(17)
-
-    print(attr)
 
     if len(attr) == 1:
         attr.append(attr[0])

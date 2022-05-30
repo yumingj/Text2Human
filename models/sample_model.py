@@ -214,7 +214,7 @@ class BaseSampleModel():
 
         return min_encodings_indices_return_list
 
-    def sample_and_refine(self, save_dir, img_name):
+    def sample_and_refine(self, save_dir=None, img_name=None):
         # sample 32x16 features indices
         sampled_top_indices_list = self.sample_fn(
             temp=1, sample_steps=self.sample_steps)
@@ -246,8 +246,14 @@ class BaseSampleModel():
 
             dec = ((dec + 1) / 2)
             dec = dec.clamp_(0, 1)
-            save_image(
-                dec, f'{save_dir}/{img_name[sample_idx]}', nrow=1, padding=4)
+            if save_dir is None and img_name is None:
+                return dec
+            else:
+                save_image(
+                    dec,
+                    f'{save_dir}/{img_name[sample_idx]}',
+                    nrow=1,
+                    padding=4)
 
     def sample_fn(self, temp=1.0, sample_steps=None):
         self.sampler_fn.eval()
@@ -420,6 +426,8 @@ class SampleFromPoseModel(BaseSampleModel):
             self.feed_data(data)
             with torch.no_grad():
                 self.generate_parsing_map()
+                self.generate_quantized_segm()
+                self.generate_texture_map()
                 self.sample_and_refine(save_dir, img_name)
 
     def generate_parsing_map(self):
@@ -430,10 +438,9 @@ class SampleFromPoseModel(BaseSampleModel):
         self.segm = seg_logits.argmax(dim=1)
         self.segm = self.segm.unsqueeze(1)
 
+    def generate_quantized_segm(self):
         self.segm_tokens = self.get_quantized_segm(self.segm)
         self.segm_tokens = self.segm_tokens.view(self.batch_size, -1)
-
-        self.generate_texture_map()
 
     def generate_texture_map(self):
         upper_cls = [1., 4.]
@@ -460,3 +467,34 @@ class SampleFromPoseModel(BaseSampleModel):
 
             mask_batch.append(mask)
         self.texture_mask = torch.stack(mask_batch, dim=0).to(torch.float32)
+
+    def feed_pose_data(self, pose_img):
+        # for ui demo
+
+        self.pose = pose_img.to(self.device)
+        self.batch_size = self.pose.size(0)
+
+    def feed_shape_attributes(self, shape_attr):
+        # for ui demo
+
+        self.shape_attr = shape_attr.to(self.device)
+
+    def feed_texture_attributes(self, texture_attr):
+        # for ui demo
+
+        self.upper_fused_attr = texture_attr[0].unsqueeze(0).to(self.device)
+        self.lower_fused_attr = texture_attr[1].unsqueeze(0).to(self.device)
+        self.outer_fused_attr = texture_attr[2].unsqueeze(0).to(self.device)
+
+    def palette_result(self, result):
+
+        seg = result[0]
+        palette = np.array(self.palette)
+        assert palette.shape[1] == 3
+        assert len(palette.shape) == 2
+        color_seg = np.zeros((seg.shape[0], seg.shape[1], 3), dtype=np.uint8)
+        for label, color in enumerate(palette):
+            color_seg[seg == label, :] = color
+        # convert to BGR
+        # color_seg = color_seg[..., ::-1]
+        return color_seg
