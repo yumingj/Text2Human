@@ -10,7 +10,22 @@ In ACM Transactions on Graphics (Proceedings of SIGGRAPH), 2022.
 
 From [MMLab@NTU](https://www.mmlab-ntu.com/index.html) affliated with S-Lab, Nanyang Technological University and SenseTime Research.
 
-[**Project Page (Coming soon)**](xxx) | [**Paper (Coming soon)**](https://arxiv.org/abs/2203.13248) | [**Supplementary Video (Coming soon)**](https://www.youtube.com/watch?v=scZTu77jixI)
+<table>
+<tr>
+    <td><img src="assets/1.png" width="100%"/></td>
+    <td><img src="assets/2.png" width="100%"/></td>
+    <td><img src="assets/3.png" width="100%"/></td>
+    <td><img src="assets/4.png" width="100%"/></td>
+</tr>
+<tr>
+    <td align='center' width='24%'>The lady wears a short-sleeve T-shirt with pure color pattern and a three-point denim skirt.</td>
+    <td align='center' width='24%'>The man wears a long and floral shirt, and long pants with the pure color pattern.</td>
+    <td align='center' width='24%'>A lady is wearing a sleeveless pure-color shirt and long jeans</td>
+    <td align='center' width='24%'>The man wears a short-sleeve T-shirt with the pure color pattern and a short pants with the pure color pattern.</td>
+<tr>
+</table>
+
+[**[Project Page (Coming soon)]**](xxx) | [**[Paper (Coming soon)]**](xxx) | [**[Demo Video ]**](https://youtu.be/yKh4VORA_E0)
 
 
 ## Updates
@@ -167,7 +182,9 @@ python train_index_prediction.py -opt ./configs/index_pred_net.yml
 
 ## (4) Results
 
-TBD
+Please visit our [Project Page](https://yumingj.github.io/projects/Text2Human.html#results) to view more results.
+You can select the attribtues to customize the desired human images.
+<img src="./assets/results.png" width="80%" height="80%">
 
 ## TODO List
 
