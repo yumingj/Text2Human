@@ -190,7 +190,7 @@ You can select the attribtues to customize the desired human images.
 ## TODO List
 
 - [ ] Release 1024x512 version of Text2Human.
-- [ ] Train the Text2Human using [SHHQ dataset]([https://arxiv.org/pdf/2204.11823.pdf](https://stylegan-human.github.io/)).
+- [ ] Train the Text2Human using [SHHQ dataset](https://stylegan-human.github.io/).
 
 ## Citation
 
