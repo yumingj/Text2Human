@@ -18,7 +18,7 @@ From [MMLab@NTU](https://www.mmlab-ntu.com/index.html) affliated with S-Lab, Nan
     <td><img src="assets/4.png" width="100%"/></td>
 </tr>
 <tr>
-    <td align='center' width='24%'>The lady wears a short-sleeve T-shirt with pure color pattern and a three-point denim skirt.</td>
+    <td align='center' width='24%'>The lady wears a short-sleeve T-shirt with pure color pattern, and a three-point and denim skirt.</td>
     <td align='center' width='24%'>The man wears a long and floral shirt, and long pants with the pure color pattern.</td>
     <td align='center' width='24%'>A lady is wearing a sleeveless pure-color shirt and long jeans</td>
     <td align='center' width='24%'>The man wears a short-sleeve T-shirt with the pure color pattern and a short pants with the pure color pattern.</td>
@@ -186,6 +186,22 @@ Please visit our [Project Page](https://yumingj.github.io/projects/Text2Human.ht
 You can select the attribtues to customize the desired human images.
 [<img src="./assets/results.png" width="90%">
 ](https://yumingj.github.io/projects/Text2Human.html#results)
+
+## DeepFashion-MultiModal Dataset
+
+<img src="./assets/logo.png" width="90%">
+
+In this work, we also propose **DeepFashion-MultiModal**, a large-scale high-quality human dataset with rich multi-modal annotations. It has the following properties:
+1. It contains 44,096 high-resolution human images, including 12,701 full body human images.
+2. For each full body images, we **manually annotate** the human parsing labels of 24 classes.
+3. For each full body images, we **manually annotate** the keypoints.
+4. We extract DensePose for each human image.
+5. Each image is **manually annotated** with attributes for both clothes shapes and textures.
+6. We provide a textual description for each image.
+
+<img src="./assets/dataset_overview.png" width="100%">
+
+Please refer to [this repo](https://github.com/yumingj/DeepFashion-MultiModal) for more details about our proposed dataset.
 
 ## TODO List
 
