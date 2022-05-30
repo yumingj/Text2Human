@@ -1,0 +1,9 @@
+__pycache__/
+.cache/
+datasets/*
+experiments/*
+tb_logger/*
+results/*
+*.png
+*.txt
+*.pth

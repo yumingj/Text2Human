@@ -1,0 +1,72 @@
+name: vqvae_bottom
+use_tb_logger: true
+set_CUDA_VISIBLE_DEVICES: ~
+gpu_ids: [3]
+
+# dataset configs
+batch_size: 4
+num_workers: 4
+train_img_dir: ./datasets/train_images
+test_img_dir: ./datasets/test_images
+segm_dir: ./datasets/segm
+pose_dir: ./datasets/densepose
+train_ann_file: ./datasets/texture_ann/train
+val_ann_file: ./datasets/texture_ann/val
+test_ann_file: ./datasets/texture_ann/test
+downsample_factor: 2
+
+model_type: HierarchyVQSpatialTextureAwareModel
+# network configs
+embed_dim: 256
+n_embed: 1024
+codebook_spatial_size: 2
+
+# bottom level vqvae
+bot_n_embed: 512
+bot_double_z: false
+bot_z_channels: 256
+bot_resolution: 512
+bot_in_channels: 3
+bot_out_ch: 3
+bot_ch: 128
+bot_ch_mult: [1, 1, 2, 4]
+bot_num_res_blocks: 2
+bot_attn_resolutions: [64]
+bot_dropout: 0.0
+
+# top level vqgan
+top_double_z: false
+top_z_channels: 256
+top_resolution: 512
+top_in_channels: 3
+top_out_ch: 3
+top_ch: 128
+top_ch_mult: [1, 1, 2, 2, 4]
+top_num_res_blocks: 2
+top_attn_resolutions: [32]
+top_dropout: 0.0
+top_vae_path: ./pretrained_models/vqvae_top.pth
+
+fix_decoder: false
+
+disc_layers: 3
+disc_weight_max: 1
+disc_start_step: 1
+n_channels: 3
+ndf: 64
+nf: 128
+perceptual_weight: 1.0
+
+num_segm_classes: 24
+
+# training configs
+val_freq: 5
+print_freq: 100
+weight_decay: 0
+manual_seed: 2021
+num_epochs: 1000
+lr: !!float 1.0e-04
+lr_decay: step
+gamma: 1.0
+step: 50
+

@@ -1,0 +1,40 @@
+name: parsing_generation
+use_tb_logger: true
+set_CUDA_VISIBLE_DEVICES: ~
+gpu_ids: [3]
+
+# dataset configs
+batch_size: 8
+num_workers: 4
+segm_dir: ./datasets/segm
+pose_dir: ./datasets/densepose
+train_ann_file: ./datasets/shape_ann/train_ann_file.txt
+val_ann_file: ./datasets/shape_ann/val_ann_file.txt
+test_ann_file: ./datasets/shape_ann/test_ann_file.txt
+downsample_factor: 2
+
+model_type: ParsingGenModel
+# network configs
+embedder_dim: 8
+embedder_out_dim: 128
+attr_class_num: [2, 4, 6, 5, 4, 3, 5, 5, 3, 2, 2, 2, 2, 2, 2]
+encoder_in_channels: 1
+fc_in_channels: 64
+fc_in_index: 4
+fc_channels: 64
+fc_num_convs: 1
+fc_concat_input: False
+fc_dropout_ratio: 0.1
+fc_num_classes: 24
+fc_align_corners: False
+
+# training configs
+val_freq: 5
+print_freq: 100
+weight_decay: 0
+manual_seed: 2021
+num_epochs: 100
+lr: !!float 1e-4
+lr_decay: step
+gamma: 0.1
+step: 50

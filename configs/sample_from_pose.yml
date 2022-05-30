@@ -1,0 +1,107 @@
+name: sample_from_pose
+use_tb_logger: true
+set_CUDA_VISIBLE_DEVICES: ~
+gpu_ids: [3]
+
+# dataset configs
+batch_size: 4
+num_workers: 4
+pose_dir: ./datasets/densepose
+texture_ann_file: ./datasets/texture_ann/test
+shape_ann_path: ./datasets/shape_ann/test_ann_file.txt
+downsample_factor: 2
+
+model_type: SampleFromPoseModel
+# network configs
+embed_dim: 256
+n_embed: 1024
+codebook_spatial_size: 2
+
+# bottom level vqgan
+bot_n_embed: 512
+bot_codebook_spatial_size: 2
+bot_double_z: false
+bot_z_channels: 256
+bot_resolution: 512
+bot_in_channels: 3
+bot_out_ch: 3
+bot_ch: 128
+bot_ch_mult: [1, 1, 2, 4]
+bot_num_res_blocks: 2
+bot_attn_resolutions: [64]
+bot_dropout: 0.0
+bot_vae_path: ./pretrained_models/vqvae_bottom.pth
+
+# top level vqgan
+top_double_z: false
+top_z_channels: 256
+top_resolution: 512
+top_in_channels: 3
+top_out_ch: 3
+top_ch: 128
+top_ch_mult: [1, 1, 2, 2, 4]
+top_num_res_blocks: 2
+top_attn_resolutions: [32]
+top_dropout: 0.0
+top_vae_path: ./pretrained_models/vqvae_top.pth
+
+# unet configs
+index_pred_encoder_in_channels: 256
+index_pred_fc_in_channels: 64
+index_pred_fc_in_index: 4
+index_pred_fc_channels: 64
+index_pred_fc_num_convs: 1
+index_pred_fc_concat_input: False
+index_pred_fc_dropout_ratio: 0.1
+index_pred_fc_num_classes: 512
+index_pred_fc_align_corners: False
+pretrained_index_network: ./pretrained_models/index_pred_net.pth
+
+# segmentation tokenization
+segm_double_z: false
+segm_z_channels: 32
+segm_resolution: 512
+segm_in_channels: 24
+segm_out_ch: 24
+segm_ch: 64
+segm_ch_mult: [1, 1, 2, 2, 4]
+segm_num_res_blocks: 1
+segm_attn_resolutions: [16]
+segm_dropout: 0.0
+segm_num_segm_classes: 24
+segm_n_embed: 1024
+segm_embed_dim: 32
+segm_token_path: ./pretrained_models/parsing_token.pth
+
+# sampler configs
+codebook_size: 18432
+segm_codebook_size: 1024
+texture_codebook_size: 18
+bert_n_emb: 512
+bert_n_layers: 24
+bert_n_head: 8
+block_size: 512 # 32 x 16
+latent_shape: [32, 16]
+embd_pdrop: 0.0
+resid_pdrop: 0.0
+attn_pdrop: 0.0
+num_head: 18
+pretrained_sampler: ./pretrained_models/sampler.pth
+
+# shape network configs
+shape_embedder_dim: 8
+shape_embedder_out_dim: 128
+shape_attr_class_num: [2, 4, 6, 5, 4, 3, 5, 5, 3, 2, 2, 2, 2, 2, 2]
+shape_encoder_in_channels: 1
+shape_fc_in_channels: 64
+shape_fc_in_index: 4
+shape_fc_channels: 64
+shape_fc_num_convs: 1
+shape_fc_concat_input: False
+shape_fc_dropout_ratio: 0.1
+shape_fc_num_classes: 24
+shape_fc_align_corners: False
+pretrained_parsing_gen: ./pretrained_models/parsing_gen.pth
+
+manual_seed: 2021
+sample_steps: 256

@@ -1,0 +1,1 @@
+srun -p dsta --mpi=pmi2 --gres=gpu:1 -n1 --ntasks-per-node=1 --job-name=lbie --kill-on-bad-exit=1 -w SG-IDC1-10-51-2-70 python sample_from_pose.py -opt ./configs/sample_from_pose.yml

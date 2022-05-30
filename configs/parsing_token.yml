@@ -1,0 +1,47 @@
+name: parsing_tokenization
+use_tb_logger: true
+set_CUDA_VISIBLE_DEVICES: ~
+gpu_ids: [3]
+
+# dataset configs
+batch_size: 4
+num_workers: 4
+train_img_dir: ./datasets/train_images
+test_img_dir: ./datasets/test_images
+segm_dir: ./datasets/segm
+pose_dir: ./datasets/densepose
+train_ann_file: ./datasets/texture_ann/train
+val_ann_file: ./datasets/texture_ann/val
+test_ann_file: ./datasets/texture_ann/test
+downsample_factor: 2
+
+model_type: VQSegmentationModel
+# network configs
+embed_dim: 32
+n_embed: 1024
+image_key: "segmentation"
+n_labels: 24
+double_z: false
+z_channels: 32
+resolution: 512
+in_channels: 24
+out_ch: 24
+ch: 64
+ch_mult: [1, 1, 2, 2, 4]
+num_res_blocks: 1
+attn_resolutions: [16]
+dropout: 0.0
+
+num_segm_classes: 24
+
+
+# training configs
+val_freq: 5
+print_freq: 100
+weight_decay: 0
+manual_seed: 2021
+num_epochs: 100
+lr: !!float 4.5e-05
+lr_decay: step
+gamma: 0.1
+step: 50

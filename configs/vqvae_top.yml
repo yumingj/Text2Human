@@ -1,0 +1,53 @@
+name: vqvae_top
+use_tb_logger: true
+set_CUDA_VISIBLE_DEVICES: ~
+gpu_ids: [3]
+
+# dataset configs
+batch_size: 4
+num_workers: 4
+train_img_dir: ./datasets/train_images
+test_img_dir: ./datasets/test_images
+segm_dir: ./datasets/segm
+pose_dir: ./datasets/densepose
+train_ann_file: ./datasets/texture_ann/train
+val_ann_file: ./datasets/texture_ann/val
+test_ann_file: ./datasets/texture_ann/test
+downsample_factor: 2
+
+model_type: VQImageSegmTextureModel
+# network configs
+embed_dim: 256
+n_embed: 1024
+double_z: false
+z_channels: 256
+resolution: 512
+in_channels: 3
+out_ch: 3
+ch: 128
+ch_mult: [1, 1, 2, 2, 4]
+num_res_blocks: 2
+attn_resolutions: [32]
+dropout: 0.0
+
+disc_layers: 3
+disc_weight_max: 0
+disc_start_step: 3000000000000000000000000001
+n_channels: 3
+ndf: 64
+nf: 128
+perceptual_weight: 1.0
+
+num_segm_classes: 24
+
+
+# training configs
+val_freq: 5
+print_freq: 100
+weight_decay: 0
+manual_seed: 2021
+num_epochs: 1000
+lr: !!float 1.0e-04
+lr_decay: step
+gamma: 1.0
+step: 50

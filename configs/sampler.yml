@@ -1,0 +1,83 @@
+name: sampler
+use_tb_logger: true
+set_CUDA_VISIBLE_DEVICES: ~
+gpu_ids: [3]
+
+# dataset configs
+batch_size: 4
+num_workers: 1
+train_img_dir: ./datasets/train_images
+test_img_dir: ./datasets/test_images
+segm_dir: ./datasets/segm
+pose_dir: ./datasets/densepose
+train_ann_file: ./datasets/texture_ann/train
+val_ann_file: ./datasets/texture_ann/val
+test_ann_file: ./datasets/texture_ann/test
+downsample_factor: 2
+
+# pretrained models
+img_ae_path: ./pretrained_models/vqvae_top.pth
+segm_ae_path: ./pretrained_models/parsing_token.pth
+
+model_type: TransformerTextureAwareModel
+# network configs
+
+# image autoencoder
+img_embed_dim: 256
+img_n_embed: 1024
+img_double_z: false
+img_z_channels: 256
+img_resolution: 512
+img_in_channels: 3
+img_out_ch: 3
+img_ch: 128
+img_ch_mult: [1, 1, 2, 2, 4]
+img_num_res_blocks: 2
+img_attn_resolutions: [32]
+img_dropout: 0.0
+
+# segmentation tokenization
+segm_double_z: false
+segm_z_channels: 32
+segm_resolution: 512
+segm_in_channels: 24
+segm_out_ch: 24
+segm_ch: 64
+segm_ch_mult: [1, 1, 2, 2, 4]
+segm_num_res_blocks: 1
+segm_attn_resolutions: [16]
+segm_dropout: 0.0
+segm_num_segm_classes: 24
+segm_n_embed: 1024
+segm_embed_dim: 32
+
+# sampler configs
+codebook_size: 18432
+segm_codebook_size: 1024
+texture_codebook_size: 18
+bert_n_emb: 512
+bert_n_layers: 24
+bert_n_head: 8
+block_size: 512 # 32 x 16
+latent_shape: [32, 16]
+embd_pdrop: 0.0
+resid_pdrop: 0.0
+attn_pdrop: 0.0
+num_head: 18
+
+# loss configs
+loss_type: reweighted_elbo
+mask_schedule: random
+
+sample_steps: 256
+
+# training configs
+val_freq: 5
+print_freq: 100
+weight_decay: 0
+manual_seed: 2021
+num_epochs: 100
+lr: !!float 1e-4
+lr_decay: step
+gamma: 1.0
+step: 50
