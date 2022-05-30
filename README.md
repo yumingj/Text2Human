@@ -18,7 +18,7 @@ From [MMLab@NTU](https://www.mmlab-ntu.com/index.html) affliated with S-Lab, Nan
     <td><img src="assets/4.png" width="100%"/></td>
 </tr>
 <tr>
-    <td align='center' width='24%'>The lady wears a short-sleeve T-shirt with pure color pattern, and a three-point and denim skirt.</td>
+    <td align='center' width='24%'>The lady wears a short-sleeve T-shirt with pure color pattern, and a short and denim skirt.</td>
     <td align='center' width='24%'>The man wears a long and floral shirt, and long pants with the pure color pattern.</td>
     <td align='center' width='24%'>A lady is wearing a sleeveless pure-color shirt and long jeans</td>
     <td align='center' width='24%'>The man wears a short-sleeve T-shirt with the pure color pattern and a short pants with the pure color pattern.</td>
