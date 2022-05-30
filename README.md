@@ -25,7 +25,7 @@ From [MMLab@NTU](https://www.mmlab-ntu.com/index.html) affliated with S-Lab, Nan
 <tr>
 </table>
 
-[**[Project Page (Coming soon)]**](xxx) | [**[Paper (Coming soon)]**](xxx) | [**[Demo Video ]**](https://youtu.be/yKh4VORA_E0)
+[**[Project Page]**](https://yumingj.github.io/projects/Text2Human.html) | [**[Paper (Coming soon)]**](xxx) | [**[Demo Video ]**](https://youtu.be/yKh4VORA_E0)
 
 
 ## Updates
@@ -182,9 +182,10 @@ python train_index_prediction.py -opt ./configs/index_pred_net.yml
 
 ## (4) Results
 
-Please visit our [Project Page](https://yumingj.github.io/projects/Text2Human.html#results) to view more results.
+Please visit our [Project Page](https://yumingj.github.io/projects/Text2Human.html#results) to view more results.</br>
 You can select the attribtues to customize the desired human images.
-<img src="./assets/results.png" width="80%" height="80%">
+[<img src="./assets/results.png" width="80%" height="80%">
+](https://yumingj.github.io/projects/Text2Human.html#results)
 
 ## TODO List
 
