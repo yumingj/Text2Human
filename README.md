@@ -189,7 +189,7 @@ You can select the attribtues to customize the desired human images.
 
 ## DeepFashion-MultiModal Dataset
 
-<img src="./assets/logo.png" width="90%">
+<img src="./assets/dataset_logo.png" width="90%">
 
 In this work, we also propose **DeepFashion-MultiModal**, a large-scale high-quality human dataset with rich multi-modal annotations. It has the following properties:
 1. It contains 44,096 high-resolution human images, including 12,701 full body human images.
