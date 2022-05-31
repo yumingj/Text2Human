@@ -135,6 +135,30 @@ python sample_from_pose.py -opt ./configs/sample_from_pose.yml
 
 **Remarks**: The above two scripts generate images without language interactions. If you want to generate images using texts, you can use the notebook or our user interface.
 
+### User Interface
+
+```python
+python ui_demo.py
+```
+<img src="./assets/ui.png" width="90%">
+
+The descriptions for shapes should follow the following format:
+```
+<gender>, <sleeve length>, <length of lower clothing>, <outer clothing type>, <other accessories1>, ...
+
+Note: The outer clothing type and accessories can be omitted.
+
+Examples:
+man, sleeveless T-shirt, long pants
+woman, short-sleeve T-shirt, short jeans
+```
+
+The descriptions for textures should follow the following format:
+```
+<upper clothing texture>, <lower clothing texture>, <outer clothing texture>
+
+Note: Currently, we only support 5 types of textures, i.e., pure color, stripe/spline, plaid/lattice, floral, denim. Your inputs should be restricted to these textures.
+```
 
 ## (3) Training Text2Human
 
