@@ -104,17 +104,10 @@ def generate_shape_attributes(user_shape_texts):
         user_embeddings = model.encode(text)
         if ('man' in text) and (text_id == 0):
             human_attr[0] = 0
+            human_attr[1] = 0
 
         if ('woman' in text or 'lady' in text) and (text_id == 0):
             human_attr[0] = 1
-
-        if ('short' in text) and (text_id == 0):
-            human_attr[1] = 0
-
-        if ('medium' in text) and (text_id == 0):
-            human_attr[1] = 1
-
-        if ('long' in text) and (text_id == 0):
             human_attr[1] = 2
 
         if (not changed[0]) and (text_id == 1):
