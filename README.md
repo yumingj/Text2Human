@@ -140,7 +140,7 @@ python sample_from_pose.py -opt ./configs/sample_from_pose.yml
 ```python
 python ui_demo.py
 ```
-<img src="./assets/ui.png" width="90%">
+<img src="./assets/ui.png" width="100%">
 
 The descriptions for shapes should follow the following format:
 ```
@@ -157,7 +157,8 @@ The descriptions for textures should follow the following format:
 ```
 <upper clothing texture>, <lower clothing texture>, <outer clothing texture>
 
-Note: Currently, we only support 5 types of textures, i.e., pure color, stripe/spline, plaid/lattice, floral, denim. Your inputs should be restricted to these textures.
+Note: Currently, we only support 5 types of textures, i.e., pure color, stripe/spline, plaid/lattice, 
+    floral, denim. Your inputs should be restricted to these textures.
 ```
 
 ## (3) Training Text2Human
