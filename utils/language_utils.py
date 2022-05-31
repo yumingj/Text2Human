@@ -33,7 +33,7 @@ upper_length_attr = {
 }
 lower_length_text = [
     'three-point', 'medium', 'short', 'covering knee', 'cropped',
-    'capri-pants', 'three-quarter', 'long', 'slack', 'of long length'
+    'three-quarter', 'long', 'slack', 'of long length'
 ]
 lower_length_attr = {
     'three-point': 0,
@@ -41,7 +41,6 @@ lower_length_attr = {
     'covering knee': 1,
     'short': 1,
     'cropped': 2,
-    'capri-pants': 2,
     'three-quarter': 2,
     'long': 3,
     'slack': 3,
