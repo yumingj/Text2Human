@@ -30,8 +30,7 @@ From [MMLab@NTU](https://www.mmlab-ntu.com/index.html) affliated with S-Lab, Nan
 
 ## Updates
 
-- [05/2022] Paper and supplementary video are released.
-- [05/2022] Web demo is created.
+- [05/2022] Paper and demo video are released.
 - [05/2022] Code is released.
 - [05/2022] This website is created.
 
@@ -104,9 +103,8 @@ After downloading the dataset, unzip the file and put them under the dataset fol
 ## (2) Sampling
 
 ### Inference Notebook
-<a href="http://colab.research.google.com/github/williamyang1991/DualStyleGAN/blob/master/notebooks/inference_playground.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" height=22.5></a>
-To help users get started, we provide a Jupyter notebook found in `./notebooks/inference_playground.ipynb` that allows one to easily generate human images via texts.
-The notebook will download the necessary pretrained models and run inference on the images found in `./data/`.
+<img src="https://colab.research.google.com/assets/colab-badge.svg" height=22.5></a></br>
+Coming soon.
 
 
 ### Pretrained Models
