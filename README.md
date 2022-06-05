@@ -48,6 +48,8 @@ We recommend using [Anaconda](https://docs.anaconda.com/anaconda/install/) to ma
 ```bash
 conda env create -f ./environment/text2human_env.yaml
 conda activate text2human
+pip install mmcv-full==1.2.1 -f https://download.openmmlab.com/mmcv/dist/cu101/torch1.7.0/index.html
+pip install mmsegmentation==0.9.0
 conda install -c huggingface tokenizers=0.9.4
 conda install -c huggingface transformers=4.0.0
 conda install -c conda-forge sentence-transformers=2.0.0
@@ -158,7 +160,7 @@ The descriptions for textures should follow the following format:
 ```
 <upper clothing texture>, <lower clothing texture>, <outer clothing texture>
 
-Note: Currently, we only support 5 types of textures, i.e., pure color, stripe/spline, plaid/lattice, 
+Note: Currently, we only support 5 types of textures, i.e., pure color, stripe/spline, plaid/lattice,
     floral, denim. Your inputs should be restricted to these textures.
 ```
 
