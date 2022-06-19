@@ -113,7 +113,7 @@ Coming soon.
 
 ### Pretrained Models
 
-Pretrained models can be downloaded from this [Google Drive](https://drive.google.com/file/d/1VyI8_AbPwAUaZJPaPba8zxsFIWumlDen/view?usp=sharing). Unzip the file and put them under the dataset folder with the following structure:
+Pretrained models can be downloaded from this [Google Drive](https://drive.google.com/file/d/1VyI8_AbPwAUaZJPaPba8zxsFIWumlDen/view?usp=sharing). Unzip the file and put them under the pretrained_models folder with the following structure:
 ```
 pretrained_models
 ├── index_pred_net.pth
