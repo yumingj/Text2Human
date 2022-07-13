@@ -184,11 +184,9 @@ class BaseSampleModel():
         self.index_pred_guidance_encoder.eval()
         self.index_pred_decoder.eval()
 
-        texture_tokens = F.interpolate(
-            texture_mask, (32, 16), mode='nearest').view(self.batch_size,
-                                                         -1).long()
+        texture_mask_flatten = F.interpolate(
+            texture_mask, (32, 16), mode='nearest').view(-1).long()
 
-        texture_mask_flatten = texture_tokens.view(-1)
         min_encodings_indices_list = [
             torch.full(
                 texture_mask_flatten.size(),
