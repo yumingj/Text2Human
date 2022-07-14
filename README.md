@@ -30,6 +30,8 @@ From [MMLab@NTU](https://www.mmlab-ntu.com/index.html) affliated with S-Lab, Nan
 
 ## Updates
 
+- [07/2022] Release the model trained on [SHHQ dataset](https://stylegan-human.github.io/)!
+- [07/2022] Try out the web demo of [drawings-to-human](https://huggingface.co/spaces/CVPR/drawings-to-human)! [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CVPR/drawings-to-human).
 - [06/2022] Integrated into [Huggingface Spaces 🤗](https://huggingface.co/spaces) using [Gradio](https://github.com/gradio-app/gradio). Try out the Web Demo: [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CVPR/Text2Human)
 - [05/2022] Paper and demo video are released.
 - [05/2022] Code is released.
@@ -113,7 +115,7 @@ Coming soon.
 
 ### Pretrained Models
 
-Pretrained models can be downloaded from this [Google Drive](https://drive.google.com/file/d/1VyI8_AbPwAUaZJPaPba8zxsFIWumlDen/view?usp=sharing). Unzip the file and put them under the pretrained_models folder with the following structure:
+Pretrained models can be downloaded from the model zoo. Unzip the file and put them under the pretrained_models folder with the following structure:
 ```
 pretrained_models
 ├── index_pred_net.pth
@@ -123,6 +125,12 @@ pretrained_models
 ├── vqvae_bottom.pth
 └── vqvae_top.pth
 ```
+
+#### Model Zoo
+| Model | Dataset | Annotations |
+| :--- | :---- | :---- |
+| [Standard Model](https://drive.google.com/file/d/1VyI8_AbPwAUaZJPaPba8zxsFIWumlDen/view?usp=sharing) | [DeepFashion-Multimodal](https://github.com/yumingj/DeepFashion-MultiModal) | Follow the dataset preparation in Step(1) |
+| [Extended Model](https://drive.google.com/file/d/1hK1Yu2PA03UuDhewu_sC-WGiEO7h-j6G/view?usp=sharing) | [SHHQ](https://stylegan-human.github.io/) | Replace the annotations with the following ones: [densepose](https://drive.google.com/file/d/1nWRAdjoBqAjrFGaxtNClsvh6JHB8NOnn/view?usp=sharing), [segm](https://drive.google.com/file/d/1tz5i4zjPfYn1fWc5nGCflajQBrdruGj2/view?usp=sharing), [shape](https://drive.google.com/file/d/1Cqo62ffCKuiCiAPyIQ_HT7JqpLQQvCGu/view?usp=sharing), [texture](https://drive.google.com/file/d/1xyFyHGvlp-Qly7t8TT_IlSX7YJlikyy3/view?usp=sharing) |
 
 ### Generation from Paring Maps
 You can generate images from given parsing maps and pre-defined texture annotations:
@@ -229,11 +237,6 @@ In this work, we also propose **DeepFashion-MultiModal**, a large-scale high-qua
 <img src="./assets/dataset_overview.png" width="100%">
 
 Please refer to [this repo](https://github.com/yumingj/DeepFashion-MultiModal) for more details about our proposed dataset.
-
-## TODO List
-
-- [ ] Release 1024x512 version of Text2Human.
-- [ ] Train the Text2Human using [SHHQ dataset](https://stylegan-human.github.io/).
 
 ## Citation
 
