@@ -132,6 +132,8 @@ pretrained_models
 | [Standard Model](https://drive.google.com/file/d/1VyI8_AbPwAUaZJPaPba8zxsFIWumlDen/view?usp=sharing) | [DeepFashion-Multimodal](https://github.com/yumingj/DeepFashion-MultiModal) | Follow the dataset preparation in Step(1) |
 | [Extended Model](https://drive.google.com/file/d/1hK1Yu2PA03UuDhewu_sC-WGiEO7h-j6G/view?usp=sharing) | [SHHQ](https://stylegan-human.github.io/) | Replace the annotations with the following ones: [densepose](https://drive.google.com/file/d/1nWRAdjoBqAjrFGaxtNClsvh6JHB8NOnn/view?usp=sharing), [segm](https://drive.google.com/file/d/1tz5i4zjPfYn1fWc5nGCflajQBrdruGj2/view?usp=sharing), [shape](https://drive.google.com/file/d/1Cqo62ffCKuiCiAPyIQ_HT7JqpLQQvCGu/view?usp=sharing), [texture](https://drive.google.com/file/d/1xyFyHGvlp-Qly7t8TT_IlSX7YJlikyy3/view?usp=sharing) |
 
+**Remark**: For fair research comparisons, it is suggested to use the standard model.
+
 ### Generation from Paring Maps
 You can generate images from given parsing maps and pre-defined texture annotations:
 ```python
