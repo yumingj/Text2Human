@@ -108,9 +108,14 @@ After downloading the dataset, unzip the file and put them under the dataset fol
 
 ## (2) Sampling
 
-### Inference Notebook
-<img src="https://colab.research.google.com/assets/colab-badge.svg" height=22.5></a></br>
-Coming soon.
+### HuggingFace Demo
+[Full Web Demo](https://huggingface.co/spaces/CVPR/Text2Human)[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CVPR/Text2Human)
+
+[Drawing-to-human](https://huggingface.co/spaces/CVPR/drawings-to-human)[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CVPR/drawings-to-human)
+
+
+### Colab
+[Unofficial Demo](https://colab.research.google.com/drive/1AVwbqLwMp_Gz3KTCgBTtnGVtXIlCZDPk#scrollTo=wMeHXDu11ebH) implemented by [@neverix](https://github.com/neverix).
 
 
 ### Pretrained Models
