@@ -30,6 +30,7 @@ From [MMLab@NTU](https://www.mmlab-ntu.com/index.html) affliated with S-Lab, Nan
 
 ## Updates
 
+- [09/2022] :fire::fire::fire:**We have released a high-quality 3D human generative model [EVA3D](https://hongfz16.github.io/projects/EVA3D.html)!**:fire::fire::fire:
 - [07/2022] Release the model trained on [SHHQ dataset](https://stylegan-human.github.io/)!
 - [07/2022] Try out the web demo of [drawings-to-human](https://huggingface.co/spaces/CVPR/drawings-to-human)! [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CVPR/drawings-to-human).
 - [06/2022] Integrated into [Huggingface Spaces 🤗](https://huggingface.co/spaces) using [Gradio](https://github.com/gradio-app/gradio). Try out the Web Demo: [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CVPR/Text2Human)
