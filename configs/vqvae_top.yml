@@ -31,8 +31,8 @@ attn_resolutions: [32]
 dropout: 0.0
 
 disc_layers: 3
-disc_weight_max: 0
-disc_start_step: 3000000000000000000000000001
+disc_weight_max: 1
+disc_start_step: 30001
 n_channels: 3
 ndf: 64
 nf: 128
